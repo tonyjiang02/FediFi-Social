@@ -32,7 +32,7 @@ export default function Navbar() {
 
         <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-xl font-semibold tracking-tight">
-            Personal Space
+            Personal
           </h2>
           <NavigationMenu>
             <NavigationMenuList className="flex-col items-start">
@@ -55,27 +55,6 @@ export default function Navbar() {
                   >
                     <BookmarkFilledIcon className="mr-1" />
                     Bookmarks
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem className="flex w-full justify-start mb-1">
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start nav-link"
-                >
-                  <ListBulletIcon className="mr-1" />
-                  Lists
-                  <Soon />
-                </Button>
-              </NavigationMenuItem>
-              <NavigationMenuItem className="w-full">
-                <Link href="/in/dm" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} w-full justify-start`}
-                    active={pathname === "/in/dm"}
-                  >
-                    <EnvelopeOpenIcon className="mr-1" />
-                    Direct Messages
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>

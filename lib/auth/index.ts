@@ -9,7 +9,7 @@ export default class OAuthCredentialsStorageService {
   public static createStorage(): StoragePort {
     //TODO: standardize how we get the environment
     const env = process.env.NODE_ENV || "development";
-
+    console.log(env)
     if (this.storageInstance) {
       return this.storageInstance;
     }

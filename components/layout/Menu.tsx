@@ -48,17 +48,6 @@ export function Menu() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/in/federated" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-              active={pathname === "/in/federated"}
-            >
-              <GlobeIcon className="mr-1" />
-              Federated
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
       </NavigationMenuList>
 
       <div className="mx-4 my-2">
@@ -70,27 +59,6 @@ export function Menu() {
       </div>
 
       <NavigationMenuList className="flex">
-        <NavigationMenuItem className="font-bold mr-1">
-          {process.env.NEXT_PUBLIC_APP_VERSION}
-        </NavigationMenuItem>
-        <NavigationMenuItem className="mr-1">
-          <Link href="#" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="mr-1">
-          <Link
-            href="https://github.com/Omedia/next-mastodon"
-            legacyBehavior
-            passHref
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              View Code
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
         <Menubar>
           <AuthenticatedMenuItem />
         </Menubar>

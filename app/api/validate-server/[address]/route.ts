@@ -19,7 +19,6 @@ export async function GET(
 ) {
   let { address } = context.params;
   address = atob(address);
-
   if (!isValidHttpUrl(address)) {
     return NextResponse.json(
       {
@@ -30,9 +29,9 @@ export async function GET(
       { status: 400 },
     );
   }
-
+  console.log("A")
   const isValid = await validateMastodonServer(address);
-
+  console.log(isValid)
   if (!isValid) {
     return NextResponse.json(
       {

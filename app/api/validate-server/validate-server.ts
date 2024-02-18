@@ -5,12 +5,13 @@ export default async function validateMastodonServer(
   serverBaseUrl: string,
 ): Promise<boolean> {
   const tokensStorage = OAuthCredentialsStorageService.createStorage();
+  console.log("1")
+  console.log(serverBaseUrl)
   const credentials = await tokensStorage.getCredentials(serverBaseUrl);
-
+  console.log("2")
   if (credentials) {
     return true;
   }
-
   try {
     const serverCredentials = await fetch(serverBaseUrl + "/api/v1/apps", {
       method: "POST",
@@ -18,13 +19,15 @@ export default async function validateMastodonServer(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        client_name: "next-mastodon",
+        client_name: "FediFi",
         redirect_uris: env.NEXTAUTH_URL + "/api/auth/callback/mastodon",
         scopes: "read write follow",
       }),
     });
-
+    console.log("2")
+    console.log(serverCredentials.json())
     if (serverCredentials.ok) {
+      console.log("3")
       const data = await serverCredentials.json();
 
       if (data.client_id && data.client_secret) {

@@ -21,16 +21,6 @@ export function AuthenticatedMenuItem() {
             Signed in as @{session.user?.name}
           </MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>
-              Edit Profile <Soon />
-            </MenubarItem>
-            <MenubarItem>
-              Notifications <Soon />
-            </MenubarItem>
-            <MenubarItem>
-              Preferences <Soon />
-            </MenubarItem>
-            <MenubarSeparator />
             <MenubarItem onClick={() => signOut()}>Logout</MenubarItem>
           </MenubarContent>
         </MenubarMenu>

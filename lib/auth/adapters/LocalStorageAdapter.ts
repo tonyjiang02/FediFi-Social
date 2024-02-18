@@ -3,7 +3,7 @@ import { AbstractOAuthStorage } from "./AbstractOAuthStorage";
 import { OAuthCredentials } from "../core/entities/OAuthCredentials";
 
 export class LocalStorageAdapter extends AbstractOAuthStorage {
-  private filePath: string = process.env.OAUTH_LOCAL_STORAGE_FILE || "";
+  private filePath: string = process.env.OAUTH_LOCAL_STORAGE_FILE || "oauth-providers.json";
 
   private async readAllCredentials(): Promise<{
     [provider: string]: OAuthCredentials;
